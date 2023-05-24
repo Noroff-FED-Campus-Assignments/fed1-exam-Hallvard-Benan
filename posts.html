@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="fav-icon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Pace | Posts</title>
+    <meta
+      name="description"
+      content="see posts from Beyond Pace, the running blog for everyone"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/js/app.js" type="module" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/toTop.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c4e13e4f8b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main class="l-main">
+      <div class="breadcrumb container">
+        <nav>
+          <a href="#">Blog posts</a>
+          <a href="#" class="is-active">/ all posts</a>
+        </nav>
+      </div>
+      <section class="u-section">
+        <h2 class="u-section__heading">Posts:</h2>
+        <div class="post-filters">
+          <select name="sort-by" id="sort-by" class="post-filters__select">
+            <option value="" selected>sort by</option>
+            <option value="">date: newest</option>
+            <option value="">date: oldest</option>
+            <option value="">A-Z</option>
+            <option value="">Z-A</option>
+          </select>
+          <select name="category" id="category" class="post-filters__select">
+            <option value="" selected>chose a category</option>
+            <option value="">training</option>
+            <option value="">nutrition</option>
+            <option value="">gear</option>
+          </select>
+          <div class="post-filters__search">
+            <input
+              type="search"
+              placeholder="search posts"
+              class="hero__inputs__search__searchbar post-filters__search-bar"
+              name="search"
+            />
+            <button type="submit" class="post-filters__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="posts-list container">
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="u-section">
+        <div class="to-top">
+          <a href="#"
+            ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
+          /></a>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer footer-primary u-section">
+      <div class="container">
+        <nav class="footer__nav">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="posts.html">posts</a>
+            </li>
+            <li class="nav-link u-coloumn">
+              <a href="#">categories:</a>
+              <a href="#">training</a>
+              <a href="#">nutrition</a>
+              <a href="#">gear</a>
+            </li>
+            <li class="nav-link"><a href="#">about us</a></li>
+            <li class="nav-link"><a href="#">contact</a></li>
+          </ul>
+          <div>
+            <a href="https://github.com/Hallvard-Benan" target="_blank"
+              >&copy; Made by Hallvard Benan</a
+            >
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<p class="introduction">
+  When it comes to running, having the right pair of shoes can make all the
+  difference. With a wide variety of options available, each designed for
+  specific purposes, it's essential to understand the differences between them.
+  In this blog post, we will explore the various types of running shoes, their
+  unique features, and the ideal scenarios for their use. Whether you're
+  recovering from a long run, hitting the trails, or chasing personal records,
+  we've got you covered!
+</p>
+
+<ol class="post__list">
+  <li class="post__list-item">
+    <h3 class="post__list-item__heading">
+      Max Cushioned Shoes: Embracing Comfort and Recovery
+    </h3>
+    <p class="post__list-item__paragraph">
+      Ideal for long distances and recovery runs, max cushioned shoes prioritize
+      comfort and shock absorption. They feature thick, plush midsoles and ample
+      cushioning to reduce impact on joints and muscles. These shoes excel in
+      providing a smooth and comfortable ride, making them perfect for those
+      seeking extra support during extended training sessions
+    </p>
+  </li>
+  <li class="post__list-item">
+    <h3 class="post__list-item__heading">
+      Trail Shoes: Conquer the Great Outdoors
+    </h3>
+    <p class="post__list-item__paragraph">
+      Trail shoes are specifically designed for off-road running adventures.
+      They feature aggressive outsoles with deep lugs to provide exceptional
+      traction on uneven terrain, mud, and rocky surfaces. These shoes often
+      have reinforced uppers for added protection against debris and
+      water-resistant properties to keep your feet dry and comfortable during
+      trail runs.
+    </p>
+  </li>
+  <li class="post__list-item">
+    <h3 class="post__list-item__heading">
+      Daily Trainers: Your Reliable Running Companion
+    </h3>
+    <p class="post__list-item__paragraph">
+      Daily trainers are versatile, all-purpose shoes suitable for regular
+      training sessions. They strike a balance between cushioning,
+      responsiveness, and durability, making them ideal for daily mileage. With
+      moderate cushioning and lightweight construction, these shoes offer a
+      comfortable yet responsive ride to support your regular training routine.
+    </p>
+  </li>
+  <li class="post__list-item">
+    <h3 class="post__list-item__heading">
+      Speed Training Shoes: Unleash Your Inner Speedster
+    </h3>
+    <p class="post__list-item__paragraph">
+      When it's time to kick up the pace and focus on speedwork, speed training
+      shoes come into play. These shoes are designed to be lightweight,
+      responsive, and flexible, enabling quick turnover and maximizing
+      propulsion. They often feature minimal cushioning to provide a more direct
+      ground feel, allowing runners to move swiftly during tempo runs,
+      intervals, and track workouts.
+    </p>
+  </li>
+  <li class="post__list-item">
+    <h3 class="post__list-item__heading">
+      Competition Shoes: Chasing Personal Records
+    </h3>
+    <p class="post__list-item__paragraph">
+      For race day or high-intensity competitions, specialized shoes can give
+      you an extra edge. With or without carbon plates, competition shoes offer
+      a combination of lightweight construction, energy return, and optimal
+      responsiveness. These shoes are designed to help you maximize speed and
+      efficiency, potentially leading to improved race times.
+    </p>
+  </li>
+</ol>
+<div class="post__section">
+  <h3 class="post__sub-heading">Try before you buy</h3>
+  <p>
+    Trying running shoes before making a purchase is crucial for several
+    reasons. First, it allows you to assess the fit and comfort of the shoes,
+    ensuring they align with your specific foot shape and size. Each brand and
+    model may have slight variations in fit, so trying them on provides an
+    opportunity to find the most comfortable option. Second, trying them out
+    allows you to test the shoes' performance characteristics, such as
+    cushioning, stability, and responsiveness. This firsthand experience helps
+    determine if the shoes align with your running style and preferences.
+    Lastly, trying on shoes can help identify any potential issues or discomfort
+    early on, allowing you to make an informed decision and avoid potential
+    problems down the road. So, don't skip the shoe-fitting process—take the
+    time to try on different models and find the perfect pair that will support
+    your running journey.
+  </p>
+</div>
+<div class="post__section">
+  <h3 class="post__sub-heading">Conclusion:</h3>
+  <p>
+    Finding the right pair of running shoes is essential for maximizing
+    performance, preventing injuries, and enjoying the sport to its fullest.
+    Understanding the unique features and purposes of each type of shoe can
+    guide you in making the right choice for your specific needs.
+  </p>
+  <p>
+    Consider factors such as cushioning, traction, support, and weight when
+    selecting your running shoes. Remember, it's important to try on different
+    models, consider your running style and preferences, and seek guidance from
+    experts at specialty running stores or podiatrists, if needed.
+  </p>
+  <p>
+    So, lace up, hit the road or trails, and let the perfect pair of running
+    shoes propel you towards your running goals. Happy running! Discover your
+    perfect fit and conquer the miles with confidence!
+  </p>
+</div>

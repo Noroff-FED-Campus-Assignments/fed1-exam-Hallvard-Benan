@@ -4,12 +4,82 @@
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
  */
 
-.c-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: var(--spacing-1);
-  padding: var(--spacing-1);
-  background-color: var(--color-white);
-  border-radius: var(--radius-1);
-  box-shadow: var(--shadow-1);
+.contact_page,
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact_page {
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.contact_form input,
+textarea {
+  border-radius: 0.6rem;
+  min-height: 3.5rem;
+  margin-bottom: 1rem;
+  min-width: 50vw;
+  font: inherit;
+}
+
+.email,
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact_email,
+.contact_name {
+  margin-left: 2rem;
+}
+
+.contact_message {
+  height: 15rem;
+  line-height: 2rem;
+  resize: none;
+}
+
+.contact_submit {
+  background-color: #432e7d;
+  color: #ffffff;
+  border-color: #161616;
+}
+
+input {
+  border: 2px solid black;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.form-error {
+  color: red;
+  animation: var(--animation-shake-y);
+}
+
+.valid {
+  border: 4px solid green;
+}
+
+.error {
+  border-color: red;
+}
+.form-success {
+  text-align: center;
+  background-color: #432e7d;
+  padding: 4rem;
+  border-radius: 1rem;
+  border: 4px solid green;
+  opacity: 0;
+  animation: var(--animation-fade-in) forwards;
+  animation-timing-function: var(--ease-in-1);
+  animation-duration: 0.3s;
+  margin-bottom: 2rem;
 }

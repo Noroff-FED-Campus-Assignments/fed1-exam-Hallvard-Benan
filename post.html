@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+    />
+    <script
+      src="https://kit.fontawesome.com/c4e13e4f8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="author" content="Hallvard Benan" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/js/app.js" type="module" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/toTop.js" defer></script>
+    <!-- TODO: Import Javascript -->
+    <title>Beyond Pace | Home</title>
+  </head>
+  <body class="animate__animated animate__fadeIn">
+    <header class="header header--primary">
+      <div class="header-nav">
+        <nav class="primary-header__nav container">
+          <a href="index.html" class="">_Home_</a>
+          <ul class="nav-links">
+            <li class="nav-link nav-link--divider">
+              <a href="posts.html">posts</a>
+            </li>
+            <li class="nav-link nav-link--divider">
+              <a href="#">categories</a>
+            </li>
+            <li class="nav-link nav-link--divider"><a href="#">about us</a></li>
+            <li class="nav-link"><a href="#">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="l-main">
+      <div class="breadcrumb container">
+        <nav>
+          <a href="#">Blog posts</a> <a href="posts.html" class="">/ all posts</a>
+          <a href="#" class=""></a>
+            / <span class="breadcrumb__title is-active"></span
+          ></a>
+        </nav>
+      </div>
+      <section class="latest-posts-section u-section">
+        <h2 class="u-section__heading" id="js-post-title"></h2>
+        <div class="post">
+          <div class="post-details container">
+            <div class="post-details__detail post-details__author"><i class="fa-solid fa-feather"></i> </div>
+            <div class="post-details__detail post-details__date"><i class="fa-sharp fa-regular fa-calendar-days"></i> </div>
+          </div>
+          <div class="post-container container">
+            <div class="post__img post__img--banner"></div>
+            <div class="post__text"></div>
+            <div class="post__img post__img--bottom"></div>
+          </div>
+        </div>
+      </section>
+      <section class="we-cover u-section">
+        <h2 class="u-section__heading">explore these topics</h2>
+        <div class="topics">
+          <a href="#" class="topic topics__training">
+            <h3>training</h3>
+            <img
+              src="/assets/symbols/dumbell.svg"
+              alt="dumbell"
+              loading="lazy"
+            />
+          </a>
+          <a href="#" class="topic topics__nutrition">
+            <h3>nutrition</h3>
+            <img
+              src="/assets/symbols/Vectorcarrot.svg"
+              alt="carrot"
+              loading="lazy"
+            />
+          </a>
+          <a class="topic topics__gear">
+            <h3>gear</h3>
+            <img
+              src="/assets/symbols/Vectorshoe.svg"
+              alt="shoe"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </section>
+      <section class="u-section">
+        <div class="to-top">
+          <a href="#"
+            ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
+          /></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="l-footer footer-primary u-section">
+      <div class="container">
+        <nav class="footer__nav">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="posts.html">posts</a>
+            </li>
+            <li class="nav-link u-coloumn">
+              <a href="#">categories:</a>
+              <a href="#">training</a>
+              <a href="#">nutrition</a>
+              <a href="#">gear</a>
+            </li>
+            <li class="nav-link"><a href="#">about us</a></li>
+            <li class="nav-link"><a href="#">contact</a></li>
+          </ul>
+          <div>
+            <a href="https://github.com/Hallvard-Benan" target="_blank"
+              >&copy; Made by Hallvard Benan</a
+            >
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

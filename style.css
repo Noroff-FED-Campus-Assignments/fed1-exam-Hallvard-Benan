@@ -1,13 +1,110 @@
 /* the props */
-@import "open-props/style";
+/* @import "open-props/style"; */
 
 /* optional imports that use the props */
-@import "open-props/normalize";
-@import "animate.css";
+/* @import "open-props/normalize"; */
+/* @import "animate.css"; */
 
 @import "css/variables.css";
 @import "css/reset.css";
 @import "css/utilities.css";
-@import "css/layout.css";
 @import "css/form.css";
 @import "css/ui.css";
+@import "css/slider.css";
+
+.skeleton-card {
+  background-color: white;
+}
+
+.skeleton-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.skeleton-title {
+  width: 50%;
+  height: 26px;
+}
+
+.skeleton-tagline {
+  height: 16px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.skeleton-details {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+}
+
+.skeleton-date {
+  height: 16px;
+  width: 40px;
+}
+
+.skeleton-btn {
+  height: 40px;
+  width: 80px;
+}
+
+.skeleton {
+  animation: load 1s linear infinite alternate;
+  border-radius: 0.4rem;
+}
+
+@keyframes load {
+  0% {
+    background-color: hsl(216, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(216, 20%, 95%);
+  }
+}
+
+/* .wave-container {
+  background-color: #20b2aa;
+  position: relative;
+}
+
+.wave-container::before {
+  content: "";
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  bottom: -0.3%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: 58vw bottom;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 121' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0C22.4434 -1 28.9842 2 55 21C94.1849 49 121.997 52 158.5 52C198.5 55 200 40 240 47C280 54 320 81 360 81C400 81 440 54 480 49C520 45 560 63 600 76C640 90 680 99 720 103C760 108 800 108 840 94C880 81 920 54 960 56C1000 58 1040 90 1080 85C1120 81 1127.5 54 1147.5 34C1171.48 10 1185.65 0 1200 0V121H1180C1160 121 1120 121 1080 121C1040 121 1000 121 960 121C920 121 880 121 840 121C800 121 760 121 720 121C680 121 640 121 600 121C560 121 520 121 480 121C440 121 400 121 360 121C320 121 280 121 240 121C200 121 160 121 120 121C80 121 40 121 20 121H0V0.0103865Z' fill='%23f7cf78'/></svg>");
+}
+
+@media (max-width: 850px) {
+  .wave-container::before {
+    height: 45px;
+  }
+} */
+
+.main--wavy {
+  background-color: var(--clr-accent-600);
+}
+
+.box {
+  background: var(--clr-primary-900);
+  --mask: radial-gradient(
+        56.57px at 50% calc(100% - 80px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 80px) 0/160px 100%,
+    radial-gradient(56.57px at 50% calc(100% + 40px), #0000 99%, #000 101%) 50%
+      calc(100% - 40px) / 160px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}

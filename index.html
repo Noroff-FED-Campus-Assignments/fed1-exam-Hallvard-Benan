@@ -2,48 +2,341 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="fav-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta
+      name="description"
+      content="Home page of beyond pace, the running blog for everyone"
+    />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, running, blog, performance, nutrition"
     />
-    <meta name="author" content="_YOUR_NAME_" />
+    <script
+      src="https://kit.fontawesome.com/c4e13e4f8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <meta name="author" content="Hallvard Benan" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
+    <script src="/js/app.js" type="module" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/toTop.js" defer></script>
+    <title>Beyond Pace | Home</title>
   </head>
   <body class="animate__animated animate__fadeIn">
-    <header class="l-header">
-      <h1>Home</h1>
+    <header class="header">
+      <div class="header-nav header--primary">
+        <nav class="primary-header__nav container">
+          <a href="index.html" class="">_Home_</a>
+          <button class="hamburger-menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-links closed">
+            <li class="nav-link nav-link--divider">
+              <a href="posts.html">posts</a>
+            </li>
+            <li class="nav-link nav-link--divider">
+              <a href="#">categories</a>
+            </li>
+            <li class="nav-link nav-link--divider"><a href="#">about us</a></li>
+            <li class="nav-link"><a href="#">contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main class="l-main">
-      <section role="search"></section>
-
-      <article role="doc-introduction">
-        <h2>List</h2>
-
-        <img
-          src="/placeholder.jpg"
-          loading="lazy"
-          alt="…"
-          class="u-img hero-image"
-          width="1024"
-          height="1024"
-        />
-
-        <p>_REPLACE_INTRODUCTION_</p>
-      </article>
-
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+    <main class="main--wavy">
+      <section class="hero container">
+        <div class="hero__text">
+          <h1 class="hero-logo">
+            Beyond <img src="/assets/logos/LOGO-WHITE.svg" alt="" /> pace
+          </h1>
+          <h2 class="hero__text__tagline">supercharge your running journey</h2>
+        </div>
+        <div class="hero__inputs">
+          <a href="posts.html" class="cta">See posts</a>
+          <div class="hero__inputs__search">
+            <input
+              type="search"
+              placeholder="search posts"
+              class="hero__inputs__search__searchbar"
+              name="search"
+            />
+            <label for="search" class="hero__inputs__search__searchbar"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></label>
+          </div>
+        </div>
       </section>
+        <div class="wave-container box">
+          <section class="latest-posts-section u-section container">
+            <h2 class="u-section__heading">New posts:</h2>
+            <!-- <h2 class="u-section__heading">Latest posts:</h2> -->
+            <!-- <a href="posts.html">See all </a> -->
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide card skeleton-card">
+                  <div class="card__img-link skeleton-img skeleton"></div>
+                  <h3 class="skeleton skeleton-title"></h3>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <p class="skeleton skeleton-tagline"></p>
+                  <div class="skeleton-details">
+                    <div class="skeleton-date skeleton"></div>
+                    <a href="#" class="skeleton-btn skeleton"></a>
+                  </div>
+                </div>
+                ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- If we need scrollbar -->
+              <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <a href="posts.html" class="cta--secondary">See all →</a>
+          </section>
+        </div>
+        <section class="we-cover u-section">
+          <h2 class="u-section__heading">explore these topics</h2>
+          <div class="topics">
+            <a href="#" class="topic topics__training">
+              <h3>training</h3>
+              <img
+                src="/assets/symbols/dumbell.svg"
+                alt="dumbell"
+                loading="lazy"
+              />
+            </a>
+            <a href="#" class="topic topics__nutrition">
+              <h3>nutrition</h3>
+              <img
+                src="/assets/symbols/Vectorcarrot.svg"
+                alt="carrot"
+                loading="lazy"
+              />
+            </a>
+            <a class="topic topics__gear">
+              <h3>gear</h3>
+              <img
+                src="/assets/symbols/Vectorshoe.svg"
+                alt="shoe"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+        </section>
+        <div class="to-top">
+          <a href="#"
+            ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
+          /></a>
+        </div>
     </main>
 
-    <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+    <footer class="l-footer footer-primary u-section">
+        <nav class="footer__nav">
+          <ul class="nav-links nav-links--footer">
+            <li class="nav-link"><a href="posts.html">posts</a></li>
+            <li class="nav-link"><a href="#">about us</a></li>
+            <li class="nav-link"><a href="#">contact</a></li>
+            <li class="u-coloumn nav-categories">
+              <a class="nav-link" href="#">categories:</a>
+              <a class="nav-link" href="#">training</a>
+              <a class="nav-link" href="#">nutrition</a>
+              <a class="nav-link" href="#">gear</a>
+            </li>
+          </ul>
+          <div class="u-coloumn nav__bottom">
+            <img src="/assets/logos/round-logo-white.svg" alt="beyond pace logo">
+            <a href="https://github.com/Hallvard-Benan" target="_blank"
+              >&copy; Made by Hallvard Benan</a
+            >
+          </div>
+        </nav>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        slidesPerView: 1,
+        spaceBetween: 10,
+        centeredSlides: false,
+        slidesPerGroupSkip: 0,
+        grabCursor: true,
+        observer: true,
+        observeParents: true,
+        keyboard: {
+          enabled: true,
+        },
+        breakpoints: {
+          769: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 10,
+          },
+          900: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 10,
+          },
+          1100: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 10,
+          },
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
