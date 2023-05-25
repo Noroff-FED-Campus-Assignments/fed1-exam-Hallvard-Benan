@@ -26,5 +26,6 @@ dist-ssr
 .env
 .env.*.local
 .dotenv
+.env 2
 
 test.md
