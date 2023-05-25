@@ -174,7 +174,7 @@ async function getPost() {
 }
 
 if (postContainer) {
-  await getPost();
+  getPost();
   const imageModal = document.querySelector(".image-modal");
   const postImages = document.querySelectorAll(".post__img");
   makeModal(imageModal, postImages);
