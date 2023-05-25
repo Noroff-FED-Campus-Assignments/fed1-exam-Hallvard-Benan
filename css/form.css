@@ -4,59 +4,66 @@
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
  */
 
-.contact_page,
-.contact_form {
+.contact-form {
+  background-color: var(--clr-primary-900);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  width: 90vw;
+  max-width: 50rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
 }
 
-.contact_page {
-  align-items: center;
-  margin: 3rem 0;
+.contact-form.exit {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
-.contact_form input,
+.contact-form input,
 textarea {
   border-radius: 0.6rem;
   min-height: 3.5rem;
   margin-bottom: 1rem;
-  min-width: 50vw;
-  font: inherit;
+  padding: 0.5rem;
 }
 
-.email,
-.name {
+textarea {
+  font-family: inherit;
+}
+
+.form__element {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
 }
 
-.contact_email,
-.contact_name {
-  margin-left: 2rem;
+.form__element input {
+  width: 100%;
 }
 
-.contact_message {
+.form__element label {
+  width: 3.5rem;
+}
+
+.form__element .contact_message {
   height: 15rem;
   line-height: 2rem;
   resize: none;
 }
 
 .contact_submit {
-  background-color: #432e7d;
-  color: #ffffff;
-  border-color: #161616;
+  color: var(--clr-primary-800);
+  font-size: var(--fs-cta-primary);
+  background-color: var(--clr-accent-600);
 }
 
 input {
   border: 2px solid black;
-}
-
-.input-section {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
 }
 
 .form-error {
@@ -71,15 +78,24 @@ input {
 .error {
   border-color: red;
 }
+
 .form-success {
   text-align: center;
-  background-color: #432e7d;
+  background-color: var(--clr-primary-900);
   padding: 4rem;
+  opacity: 0;
   border-radius: 1rem;
   border: 4px solid green;
-  opacity: 0;
+  display: grid;
+  justify-content: space-evenly;
   animation: var(--animation-fade-in) forwards;
   animation-timing-function: var(--ease-in-1);
   animation-duration: 0.3s;
   margin-bottom: 2rem;
+  height: 50vh;
+}
+
+.form-success__checkmark i {
+  color: green;
+  font-size: 15rem;
 }

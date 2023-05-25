@@ -67,53 +67,72 @@
     </header>
     <main class="l-main">
       <section class="u-section">
-        <h1 class="section-heading">Message us</h1>
-        <form class="contact_form" id="contact-form">
-          <div class="input-section">
-            <div class="email">
-              <label for="email" class="label_email">E-mail:</label>
-              <input
-                name="email"
-                id="email"
-                placeholder="example@squareyes.com"
-                class="contact_email"
-                aria-describedby="email-error"
-              />
+        <h1 class="u-section__heading">Message us</h1>
+        <div class="container">
+          <div id="validation-message"></div>
+          <form class="contact-form" id="contact-form">
+            <div class="input-section">
+              <div class="form__element form__element--email">
+                <label for="email" class="label_email">E-mail:</label>
+                <input
+                  name="email"
+                  id="email"
+                  placeholder="example@email.com"
+                  class="contact_email"
+                  aria-describedby="email-error"
+                />
+              </div>
+              <div class="form-error is-hidden" id="email-error">
+                Please enter a valid email
+              </div>
             </div>
-            <div class="form-error is-hidden" id="email-error">
-              Please enter a valid email
+            <div class="input-section">
+              <div class="form__element form__element--name">
+                <label for="name" class="label_name">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Firstname Lastname"
+                  id="name"
+                  class="contact_name"
+                  aria-describedby="name-error"
+                />
+              </div>
+              <div class="form-error is-hidden" id="name-error">
+                Please fill in your full name
+              </div>
             </div>
-          </div>
-          <div class="input-section">
-            <div class="name">
-              <label for="name" class="label_name">Name:</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="contact_name"
-                aria-describedby="name-error"
-              />
+            <div class="input-section">
+              <div class="form__element form__element--subject">
+                <label for="subject" class="label_name">Subject:</label>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="minimum 15 characters"
+                  id="subject"
+                  class="form__element__input form__element__input--subject"
+                  aria-describedby="subject-error"
+                />
+              </div>
+              <div class="form-error is-hidden" id="subject-error">
+                subject must be at least: 15 characters
+              </div>
             </div>
-            <div class="form-error is-hidden" id="name-error">
-              Please fill in your full name
+            <textarea
+              name="message"
+              id="message"
+              class="contact_message"
+              placeholder="Your message"
+              cols="30"
+              rows="10"
+              aria-describedby="message-error"
+            ></textarea>
+            <div class="form-error is-hidden" id="message-error">
+              subject must be at least 25 characters
             </div>
-          </div>
-          <textarea
-            name="message"
-            id="subject"
-            class="contact_message"
-            placeholder="Your message"
-            cols="30"
-            rows="10"
-            aria-describedby="subject-error"
-          ></textarea>
-          <div class="form-error is-hidden" id="subject-error">
-            subject must be at least 10 characters
-          </div>
-          <input type="submit" class="contact_submit" />
-        </form>
-        <div id="validation-message"></div>
+            <input type="submit" class="contact_submit" />
+          </form>
+        </div>
       </section>
       <section class="u-section">
         <div class="to-top">

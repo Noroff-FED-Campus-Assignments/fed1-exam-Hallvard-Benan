@@ -1,64 +1,37 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L50
-============================================
-*/
-
-// TODO: Get DOM elements from the DOM
-
-// TODO: Create event listeners for the form
-
-/*
-============================================
-API calls
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L157
-============================================
-*/
-
-// TODO: Set up a function to fetch data from the API
-
-/*
-============================================
-Helper functions
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L118
-============================================
-*/
-
-// TODO: Create a function to validate an input field
-
-// TODO: Create a function to create a DOM element
 const contactForm = document.getElementById("contact-form");
 const emailInput = document.getElementById("email");
 const nameInput = document.getElementById("name");
 const subjectInput = document.getElementById("subject");
+const messageInput = document.getElementById("message");
 const nameError = document.getElementById("name-error");
 const emailError = document.getElementById("email-error");
 const subjectError = document.getElementById("subject-error");
+const messageError = document.getElementById("message-error");
 const validationMessageContainer =
   document.getElementById("validation-message");
 
-nameInput.addEventListener("blur", validateInput);
-emailInput.addEventListener("blur", validateInput);
-subjectInput.addEventListener("blur", validateInput);
+const inputsToValidate = [nameInput, emailInput, subjectInput, messageInput];
+
+inputsToValidate.forEach((input) => {
+  input.addEventListener("blur", validateInput);
+});
 
 function validateForm(event) {
   event.preventDefault();
 
-  hideError(nameError);
-  hideError(emailError);
-  hideError(subjectError);
+  hideAllErrors();
 
   const nameIsValid = checkLength(nameInput, 1, nameError);
   const emailIsValid = validateEmail(emailInput, emailInput, emailError);
-  const subjectIsValid = checkLength(subjectInput, 10, subjectError);
+  const subjectIsValid = checkLength(subjectInput, 15, subjectError);
+  const messageIsValid = checkLength(messageInput, 25, messageError);
 
-  if (nameIsValid && emailIsValid && subjectIsValid) {
+  if (nameIsValid && emailIsValid && subjectIsValid && messageIsValid) {
     contactForm.classList.add("exit");
     setTimeout(function () {
       contactForm.innerHTML = "";
       validationMessageContainer.innerHTML =
-        '<div class="form-success"><h2>Thank you for your submission!</h2><p>Submission succsessful ✅</p></div><div><a href="javascript:history.back()" class="pagebuttons">← Back to Movies</a></div>';
+        '<div class="form-success animate__animated animate__fadeIn""><h2>Thank you for your submission!</h2><div class="form-success__checkmark"><i class="fa-solid fa-check"></i></div></div><div><a href="index.html" class="cta--secondary">← Back to main page</a></div>';
       contactForm.reset();
     }, 300);
   }
@@ -66,16 +39,16 @@ function validateForm(event) {
 
 function validateInput(event) {
   const input = event.target;
-  hideError(nameError);
-  hideError(emailError);
-  hideError(subjectError);
+  hideAllErrors();
 
   if (input === nameInput) {
     checkLength(nameInput, 1, nameError);
   } else if (input === emailInput) {
     validateEmail(emailInput, emailInput, emailError);
   } else if (input === subjectInput) {
-    checkLength(subjectInput, 10, subjectError);
+    checkLength(subjectInput, 15, subjectError);
+  } else if (input === messageInput) {
+    checkLength(messageInput, 25, messageError);
   }
 }
 
@@ -97,6 +70,13 @@ function checkLength(target, requiredLength, errorContainer) {
 
 function hideError(errorContainer) {
   errorContainer.classList.add("is-hidden");
+}
+
+const errorsToHide = [nameError, emailError, subjectError, messageError];
+function hideAllErrors() {
+  errorsToHide.forEach((error) => {
+    hideError(error);
+  });
 }
 
 function validateEmail(target, email, errorContainer) {

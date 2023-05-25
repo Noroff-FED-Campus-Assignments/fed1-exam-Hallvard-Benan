@@ -1,9 +1,9 @@
 /* the props */
-/* @import "open-props/style"; */
+@import "open-props/style";
 
 /* optional imports that use the props */
 /* @import "open-props/normalize"; */
-/* @import "animate.css"; */
+@import "animate.css";
 
 @import "css/variables.css";
 @import "css/reset.css";

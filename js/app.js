@@ -55,7 +55,7 @@ https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#
  */
 
 import { addScrollEffect } from "./functions/scrollEffect";
-
+import { makeModal } from "./functions/imageModal";
 const token = import.meta.env.VITE_API_TOKEN;
 
 const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
@@ -172,6 +172,10 @@ async function getPost() {
     console.log(error);
   }
 }
+
 if (postContainer) {
-  getPost();
+  await getPost();
+  const imageModal = document.querySelector(".image-modal");
+  const postImages = document.querySelectorAll(".post__img");
+  makeModal(imageModal, postImages);
 }
