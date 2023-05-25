@@ -74,13 +74,16 @@
   /* padding */
   --padding-section: 6rem 0;
   --padding-hero: 6rem 0 8rem 0rem;
-  --padding-main: 6rem;
+  --padding-main: 1rem;
 
-  --gap-section: 5rem;
+  --gap-section: 4rem;
 
   /* width */
   --logo-width: 4.5rem;
   --to-top-width: 48px;
+
+  /* height */
+  --banner-height: 17rem;
 }
 
 /* dekstop */
@@ -113,5 +116,8 @@
     --to-top-width: 60px;
 
     --desktop-visible: block;
+
+    /* height */
+    --banner-height: 26rem;
   }
 }

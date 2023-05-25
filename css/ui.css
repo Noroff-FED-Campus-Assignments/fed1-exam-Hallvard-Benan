@@ -487,7 +487,8 @@ body {
   gap: 2rem;
 }
 
-.post-container p {
+.post-container p,
+.post-container li {
   text-align: start;
   max-width: 80ch;
   width: 90%;
@@ -510,7 +511,7 @@ body {
 }
 
 .post__img--banner {
-  height: 27rem;
+  height: var(--banner-height);
   padding-top: 0;
 }
 .post__img--banner img {
