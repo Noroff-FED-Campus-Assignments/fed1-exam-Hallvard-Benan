@@ -7,9 +7,10 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         // ADD YOUR PAGES HERE
-        // contact: resolve(__dirname, "contact.html"),
-        // blog: resolve(__dirname, "blogs.html"),
-        // blogDetail: resolve(__dirname, "blog-detail.html"),
+        contact: resolve(__dirname, "contact.html"),
+        posts: resolve(__dirname, "posts.html"),
+        blogDetail: resolve(__dirname, "post.html"),
+        about: resolve(__dirname, "about.html"),
       },
     },
   },
