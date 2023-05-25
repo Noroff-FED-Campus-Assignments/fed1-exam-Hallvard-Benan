@@ -172,4 +172,6 @@ async function getPost() {
     console.log(error);
   }
 }
-getPost();
+if (postContainer) {
+  getPost();
+}
