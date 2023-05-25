@@ -2,7 +2,7 @@ const header = document.querySelector(".header");
 const makeHeader = function () {
   header.innerHTML = `<div class="header-nav header--primary">
     <nav class="primary-header__nav container">
-    <a href="index.html" class="nav__logo"><img src="./assets/logos/headerlogo.svg"></a>
+    <a href="index.html" class="nav__logo"><img src="/assets/logos/headerlogo.svg"></a>
     <button class="hamburger-menu">
     <i class="fa-solid fa-bars"></i>
     </button>
