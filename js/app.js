@@ -58,7 +58,7 @@ import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
 const token = import.meta.env.VITE_API_TOKEN;
 
-const url = "http://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
+const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
 
 const sliderContainer = document.querySelector(".swiper-wrapper");
 const postListContainer = document.querySelector(".posts-list");
