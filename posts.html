@@ -63,9 +63,12 @@
     </header>
     <main class="l-main">
       <div class="breadcrumb container">
-        <nav>
+        <nav class="breadcrumb__nav">
           <a href="#">Blog posts</a>
-          <a href="#" class="is-active">/ all posts</a>
+          <a href="posts.html" class="breadcrumb-active is-active"
+            >/ all posts /</a
+          >
+          <a href="#" class="breadcrumb-category"></a>
         </nav>
       </div>
       <section class="u-section">
@@ -73,21 +76,22 @@
         <div class="post-filters">
           <select name="sort-by" id="sort-by" class="post-filters__select">
             <option value="" selected>sort by</option>
-            <option value="">date: newest</option>
-            <option value="">date: oldest</option>
-            <option value="">A-Z</option>
-            <option value="">Z-A</option>
+            <option value="new-old">date: newest</option>
+            <option value="old-new">date: oldest</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
           </select>
           <select name="category" id="category" class="post-filters__select">
             <option value="" selected>chose a category</option>
-            <option value="">training</option>
-            <option value="">nutrition</option>
-            <option value="">gear</option>
+            <option value="all">all</option>
+            <option value="training">training</option>
+            <option value="nutrition">nutrition</option>
+            <option value="gear">gear</option>
           </select>
           <div class="post-filters__search">
             <input
               type="search"
-              placeholder="search posts"
+              placeholder="search posts, author..."
               class="hero__inputs__search__searchbar post-filters__search-bar"
               name="search"
             />

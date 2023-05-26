@@ -54,14 +54,21 @@ https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#
  * @param {item} item The object with properties from the fetched JSON data.
  */
 
+import { filterPostsByCategory } from "./functions/filter";
+import { updateBreadcrumb } from "./functions/filter";
+// import { searchPosts } from "./functions/filter";
 import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
+
 const token = import.meta.env.VITE_API_TOKEN;
 
 const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
 
 const sliderContainer = document.querySelector(".swiper-wrapper");
 const postListContainer = document.querySelector(".posts-list");
+
+const categorySelector = document.getElementById("category");
+const searchBar = document.querySelector(".post-filters__search-bar");
 const myHeaders = new Headers();
 myHeaders.append("Authorization", `Bearer ${token}`);
 myHeaders.append(
@@ -80,25 +87,99 @@ async function getPosts() {
     const response = await fetch(url, requestOptions);
     const result = await response.json();
     const posts = result.records;
+    let postsToDisplay = posts;
 
-    console.log(posts);
     if (postListContainer) {
-      postListContainer.innerHTML = "";
-      posts.forEach((post) => {
-        postListContainer.innerHTML += `
-          <div class="card posts-card">
-                <a href="post.html?id=${post.id}" class="card__img-link"><img src="${post.fields.thumbnail_image[0].url}" alt="thumbnail image for ${post.fields.Title}" class="card__img" loading="lazy" /></a>
-                <h3 class="card__title">${post.fields.Title}</h3>
-                <p class="card__tagline">${post.fields.Short_excerpt}
-                <div class="card__details">
-                  <div class="card__details__date">${post.fields.publish_date}</div>
-                  <a href="post.html?id=${post.id}" class="cta card__cta">read more</a>
-                </div>
+      const queryString = document.location.search;
+      const params = new URLSearchParams(queryString);
+      let categoryParam = params.get("category");
+      const selected = categorySelector.value;
+      let searchedPosts = posts;
+
+      if (categoryParam) {
+        postsToDisplay = filterPostsByCategory(posts, categoryParam);
+        updateBreadcrumb(categoryParam);
+      }
+
+      if (selected === "all") {
+        postsToDisplay = posts;
+        updateBreadcrumb(selected);
+      }
+
+      if (selected && selected !== "all") {
+        postsToDisplay = filterPostsByCategory(posts, selected);
+        updateBreadcrumb(selected);
+      }
+
+      let renderPosts = function (postsToRender) {
+        postListContainer.innerHTML = "";
+        postsToRender.forEach((post) => {
+          postListContainer.innerHTML += `
+            <div class="card posts-card">
+              <a href="post.html?id=${post.id}" class="card__img-link">
+                <img src="${post.fields.thumbnail_image[0].url}" alt="thumbnail image for ${post.fields.Title}" class="card__img" loading="lazy" />
+              </a>
+              <h3 class="card__title">${post.fields.Title}</h3>
+              <p class="card__tagline">${post.fields.Short_excerpt}</p>
+              <div class="card__details">
+                <div class="card__details__date">${post.fields.publish_date}</div>
+                <a href="post.html?id=${post.id}" class="cta card__cta">read more</a>
               </div>
+            </div>
           `;
-      });
+        });
+      };
+
+      renderPosts(postsToDisplay);
       const cards = document.querySelectorAll(".posts-card");
       addScrollEffect(cards, 0.2);
+
+      searchBar.addEventListener("keyup", function () {
+        const searchTerm = searchBar.value.trim().toLowerCase();
+        searchedPosts = posts.filter(function (post) {
+          const titleMatch = post.fields.Title.trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          const blogTextMatch = post.fields["blog text"]
+            .trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          const authorMatch = post.fields.author
+            .trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          return titleMatch || blogTextMatch || authorMatch;
+        });
+
+        renderPosts(searchedPosts);
+        let renderedPostcards = document.querySelectorAll(".posts-card");
+        addScrollEffect(renderedPostcards, 0.2);
+      });
+
+      const sorter = document.getElementById("sort-by");
+
+      const sortPosts = function (posts) {
+        sorter.addEventListener("change", function () {
+          const selectedFilter = sorter.value;
+          let sortedPosts = [];
+
+          if (selectedFilter === "a-z") {
+            sortedPosts = posts.sort((a, b) =>
+              a.fields.Title.localeCompare(b.fields.Title)
+            );
+          } else if (selectedFilter === "z-a") {
+            sortedPosts = posts.sort((a, b) =>
+              b.fields.Title.localeCompare(a.fields.Title)
+            );
+          }
+
+          renderPosts(sortedPosts);
+          let renderedPostcards = document.querySelectorAll(".posts-card");
+          addScrollEffect(renderedPostcards, 0.2);
+        });
+      };
+
+      sortPosts(postsToDisplay);
     }
     if (sliderContainer) {
       sliderContainer.innerHTML = "";
@@ -139,6 +220,13 @@ async function getPosts() {
 }
 getPosts();
 
+if (categorySelector) {
+  categorySelector.addEventListener("change", () => {
+    getPosts();
+    searchBar.value = "";
+  });
+}
+
 const postContainer = document.querySelector(".post__text");
 const bannerImageContainer = document.querySelector(".post__img--banner");
 const bottomImageContainer = document.querySelector(".post__img--bottom");
@@ -154,7 +242,6 @@ const breadCrumbTitle = document.querySelector(".breadcrumb__title");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-
 async function getPost() {
   try {
     const response = await fetch(url + `/${id}`, requestOptions);
