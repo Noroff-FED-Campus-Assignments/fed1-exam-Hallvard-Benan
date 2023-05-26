@@ -528,3 +528,10 @@ body {
 .post {
   gap: 1.2rem;
 }
+
+dialog:modal {
+  padding: 0;
+}
+dialog:modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.915);
+}

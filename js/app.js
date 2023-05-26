@@ -58,7 +58,7 @@ import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
 const token = import.meta.env.VITE_API_TOKEN;
 
-const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
+const url = "http://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
 
 const sliderContainer = document.querySelector(".swiper-wrapper");
 const postListContainer = document.querySelector(".posts-list");
@@ -145,10 +145,13 @@ const bottomImageContainer = document.querySelector(".post__img--bottom");
 const authorContainer = document.querySelector(".post-details__author");
 const dateContainer = document.querySelector(".post-details__date");
 const postTitile = document.getElementById("js-post-title");
-const queryString = document.location.search;
 const documentTitle = document.querySelector("title");
+const documentAuthor = document.getElementById("meta-author");
+const documentDescription = document.getElementById("meta-description");
+const documentKeywords = document.getElementById("meta-keywords");
 const breadCrumbTitle = document.querySelector(".breadcrumb__title");
 
+const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
@@ -168,6 +171,10 @@ async function getPost() {
     dateContainer.innerHTML += post.fields.publish_date;
     bannerImageContainer.innerHTML = `<img src="${post.fields.thumbnail_image[0].thumbnails.full.url}" alt="cover image for ${post.fields.Title}" loading="lazy">`;
     bottomImageContainer.innerHTML = `<img src="${post.fields.full_size_image_1[0].url}" alt="cover image for ${post.fields.Title}" loading="lazy">`;
+    documentDescription.content = post.fields.Short_excerpt + " | blog post";
+    documentAuthor.content = post.fields.author;
+    documentKeywords.content += post.fields.category[0];
+    console.log(documentDescription);
   } catch (error) {
     console.log(error);
   }
