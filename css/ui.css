@@ -547,6 +547,15 @@ dialog:modal::backdrop {
 .post__img--about {
   width: 100%;
 }
+.about__we-love-running {
+  padding-top: 1rem;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-heading-primary);
+  text-transform: uppercase;
+}
+.about__heart {
+  color: var(--clr-accent-600);
+}
 
 /* get in touch section */
 .section--get-in-touch {

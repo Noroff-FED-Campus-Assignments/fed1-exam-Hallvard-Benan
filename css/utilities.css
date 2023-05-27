@@ -49,3 +49,9 @@
 .u-light-text {
   color: var(--clr-primary-900);
 }
+
+.u-background-banner {
+  background-image: url(/assets/track-logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
