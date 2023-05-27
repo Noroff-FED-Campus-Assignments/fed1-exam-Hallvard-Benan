@@ -84,6 +84,7 @@
 
   /* height */
   --banner-height: 17rem;
+  --card-height: 25rem;
 }
 
 /* dekstop */
@@ -119,5 +120,6 @@
 
     /* height */
     --banner-height: 26rem;
+    --card-height: 30rem;
   }
 }

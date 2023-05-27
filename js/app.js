@@ -1,80 +1,38 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
-
-// const { loadEnv } = require("vite");
-
-// TODO: Get DOM elements from the DOM
-
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
-
-// TODO: Fetch and Render the list to the DOM
-
-// TODO: Create event listeners for the filters and the search
-
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
-
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
-
-// TODO: Fetch an array of objects from the API
-
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
-
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
-
 import { filterPostsByCategory } from "./functions/filter";
 import { updateBreadcrumb } from "./functions/filter";
-// import { searchPosts } from "./functions/filter";
+import { navigateToPostsPage } from "./functions/filter";
 import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
 
-const token = import.meta.env.VITE_API_TOKEN;
-
-const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
-
 const sliderContainer = document.querySelector(".swiper-wrapper");
 const postListContainer = document.querySelector(".posts-list");
-
 const categorySelector = document.getElementById("category");
 const searchBar = document.querySelector(".post-filters__search-bar");
+const linkingSearchbar = document.querySelector("#link-search");
+const linkingSearchButton = document.querySelector("#link-search-button");
+
+const token = import.meta.env.VITE_API_TOKEN;
+const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
 const myHeaders = new Headers();
 myHeaders.append("Authorization", `Bearer ${token}`);
 myHeaders.append(
   "Cookie",
   "brw=brw3dhg6K2A4sfph0; AWSALB=lCsdKQ3GWh6mswkM+76wWL4MUQLbMjqKXMSd2+EWPAEmKizmUHzcS2UwiOf2c7o54koUKYlGs3e7BvgeCCS84fNahcN9zEOCRWKGUaK+SAPvbZwxQ9glmr0SnZU7; AWSALBCORS=lCsdKQ3GWh6mswkM+76wWL4MUQLbMjqKXMSd2+EWPAEmKizmUHzcS2UwiOf2c7o54koUKYlGs3e7BvgeCCS84fNahcN9zEOCRWKGUaK+SAPvbZwxQ9glmr0SnZU7"
 );
+
+if (linkingSearchButton) {
+  linkingSearchButton.addEventListener("click", function () {
+    const searchValue = linkingSearchbar.value.trim();
+    navigateToPostsPage(searchValue);
+  });
+
+  linkingSearchbar.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      const searchValue = linkingSearchbar.value.trim();
+      navigateToPostsPage(searchValue);
+    }
+  });
+}
 
 const requestOptions = {
   method: "GET",
@@ -92,13 +50,33 @@ async function getPosts() {
     if (postListContainer) {
       const queryString = document.location.search;
       const params = new URLSearchParams(queryString);
-      let categoryParam = params.get("category");
+      const categoryParam = params.get("category");
+      const searchParam = params.get("search");
       const selected = categorySelector.value;
       let searchedPosts = posts;
 
       if (categoryParam) {
         postsToDisplay = filterPostsByCategory(posts, categoryParam);
         updateBreadcrumb(categoryParam);
+      }
+
+      if (searchParam) {
+        const searchTerm = searchParam.trim().toLowerCase();
+        postsToDisplay = posts.filter(function (post) {
+          const titleMatch = post.fields.Title.trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          const blogTextMatch = post.fields["blog text"]
+            .trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          const authorMatch = post.fields.author
+            .trim()
+            .toLowerCase()
+            .includes(searchTerm);
+          return titleMatch || blogTextMatch || authorMatch;
+        });
+        updateBreadcrumb(searchParam);
       }
 
       if (selected === "all") {
@@ -170,6 +148,18 @@ async function getPosts() {
           } else if (selectedFilter === "z-a") {
             sortedPosts = posts.sort((a, b) =>
               b.fields.Title.localeCompare(a.fields.Title)
+            );
+          } else if (selectedFilter === "new-old") {
+            sortedPosts = posts.sort(
+              (a, b) =>
+                new Date(b.fields.publish_date) -
+                new Date(a.fields.publish_date)
+            );
+          } else if (selectedFilter === "old-new") {
+            sortedPosts = posts.sort(
+              (a, b) =>
+                new Date(a.fields.publish_date) -
+                new Date(b.fields.publish_date)
             );
           }
 
@@ -253,6 +243,10 @@ async function getPost() {
     documentTitle.innerHTML = post.fields.Title;
     postTitile.innerHTML = post.fields.Title;
     breadCrumbTitle.innerHTML = post.fields.Title;
+    const skeletonUi = document.querySelectorAll(".skeleton");
+    skeletonUi.forEach((el) => {
+      el.classList.remove("skeleton");
+    });
     postContainer.innerHTML = newBlogText;
     authorContainer.innerHTML += post.fields.author;
     dateContainer.innerHTML += post.fields.publish_date;

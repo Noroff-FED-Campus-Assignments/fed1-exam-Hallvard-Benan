@@ -1,0 +1,54 @@
+.skeleton-card {
+  background-color: white;
+}
+
+.skeleton-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.skeleton-title {
+  width: 50%;
+  height: 26px;
+}
+
+.skeleton-tagline {
+  height: 16px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.skeleton-details {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+}
+
+.skeleton-date {
+  height: 16px;
+  width: 40px;
+}
+
+.skeleton-btn {
+  height: 40px;
+  width: 80px;
+}
+
+.skeleton {
+  animation: load 1s linear infinite alternate;
+  border-radius: 0.4rem;
+}
+
+@keyframes load {
+  0% {
+    background-color: hsl(216, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(216, 20%, 95%);
+  }
+}

@@ -75,11 +75,12 @@
           <div class="hero__inputs__search">
             <input
               type="search"
-              placeholder="search posts"
+              placeholder="search posts, author, content..."
               class="hero__inputs__search__searchbar"
               name="search"
+              id="link-search"
             />
-           <button class="hero__inputs__search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
+           <button class="hero__inputs__search__button" id="link-search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
       </section>
@@ -276,6 +277,39 @@
           </div>
         </div>
         </section>
+        <section class="u-section">
+          <h2 class="u-section__heading">About us:</h2>
+          <div class="container">
+            <img
+              src="/assets/about.png"
+              alt="people running on a track with the beyond pace logo"
+            />
+            <p class="copy" style="max-width: 85ch">
+              At Beyond Pace, we are passionate about running and dedicated to
+              helping individuals become better runners, regardless of their skill
+              level. Whether you're an advanced runner striving for victory or a
+              new runner seeking inspiration, we're here to support and guide you
+              on your running journey. Our mission is to provide valuable
+              resources, expert tips, and motivating content to empower runners of
+              all backgrounds and abilities. We believe that running has the power
+              to transform lives, enhance physical and mental well-being, and
+              create a vibrant community. Join us as we share knowledge, celebrate
+              achievements, and inspire each other to reach new heights in the
+              exhilarating world of running. Together, we can go the distance and
+              unlock our true running potential.
+            </p>
+          </div>
+        </section>
+        <section class="u-section">
+          <h2 class="section-heading">Get in toutch:</h2>
+          <div class="container">
+            <p class="copy">
+              We strive to be community oriented. If you have any questions or
+              input,we would love to hear from you
+            </p>
+            <a href="contact.html" class="cta">Contact us</a>
+          </div>
+        </section>
         <div class="to-top">
           <a href="#"
             ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
@@ -319,7 +353,7 @@
           enabled: true,
         },
         breakpoints: {
-          769: {
+          575: {
             slidesPerView: 2,
             slidesPerGroup: 2,
             spaceBetween: 10,

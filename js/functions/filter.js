@@ -13,3 +13,7 @@ export function updateBreadcrumb(category) {
   breadCrumbContainer.innerHTML = ` ${category}`;
   breadCrumbContainer.classList.add("is-active");
 }
+
+export function navigateToPostsPage(searchValue) {
+  window.location.href = `posts.html?search=${encodeURIComponent(searchValue)}`;
+}

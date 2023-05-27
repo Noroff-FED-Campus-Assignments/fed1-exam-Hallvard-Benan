@@ -11,8 +11,9 @@
 @import "css/form.css";
 @import "css/ui.css";
 @import "css/slider.css";
+@import "css/loading.css";
 
-.skeleton-card {
+/* .skeleton-card {
   background-color: white;
 }
 
@@ -67,6 +68,8 @@
   }
 }
 
+.post__text.skeleton {
+} */
 /* .wave-container {
   background-color: #20b2aa;
   position: relative;
