@@ -87,7 +87,12 @@
   --card-height: 25rem;
 }
 
-/* dekstop */
+@media (min-width: 30em) {
+  :root {
+    --fs-heading-primary: var(--fs-700);
+  }
+}
+
 @media (min-width: 50em) {
   :root {
     /* font-sizes */

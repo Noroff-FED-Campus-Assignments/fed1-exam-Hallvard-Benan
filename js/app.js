@@ -1,8 +1,9 @@
 import { filterPostsByCategory } from "./functions/filter";
 import { updateBreadcrumb } from "./functions/filter";
-import { navigateToPostsPage } from "./functions/filter";
+import { handleLinkingSearch } from "./functions/filter";
 import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
+import { toggleLoadMoreButton } from "./functions/load-more-button";
 
 const sliderContainer = document.querySelector(".swiper-wrapper");
 const postListContainer = document.querySelector(".posts-list");
@@ -10,6 +11,7 @@ const categorySelector = document.getElementById("category");
 const searchBar = document.querySelector(".post-filters__search-bar");
 const linkingSearchbar = document.querySelector("#link-search");
 const linkingSearchButton = document.querySelector("#link-search-button");
+const loadMoreButton = document.querySelector(".load-more-button");
 
 const token = import.meta.env.VITE_API_TOKEN;
 const url = "https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ";
@@ -19,26 +21,21 @@ myHeaders.append(
   "Cookie",
   "brw=brw3dhg6K2A4sfph0; AWSALB=lCsdKQ3GWh6mswkM+76wWL4MUQLbMjqKXMSd2+EWPAEmKizmUHzcS2UwiOf2c7o54koUKYlGs3e7BvgeCCS84fNahcN9zEOCRWKGUaK+SAPvbZwxQ9glmr0SnZU7; AWSALBCORS=lCsdKQ3GWh6mswkM+76wWL4MUQLbMjqKXMSd2+EWPAEmKizmUHzcS2UwiOf2c7o54koUKYlGs3e7BvgeCCS84fNahcN9zEOCRWKGUaK+SAPvbZwxQ9glmr0SnZU7"
 );
-
-if (linkingSearchButton) {
-  linkingSearchButton.addEventListener("click", function () {
-    const searchValue = linkingSearchbar.value.trim();
-    navigateToPostsPage(searchValue);
-  });
-
-  linkingSearchbar.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      const searchValue = linkingSearchbar.value.trim();
-      navigateToPostsPage(searchValue);
-    }
-  });
-}
-
 const requestOptions = {
   method: "GET",
   headers: myHeaders,
   redirect: "follow",
 };
+
+if (linkingSearchButton) {
+  linkingSearchButton.addEventListener("click", handleLinkingSearch);
+
+  linkingSearchbar.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      handleLinkingSearch();
+    }
+  });
+}
 
 async function getPosts() {
   try {
@@ -77,6 +74,7 @@ async function getPosts() {
           return titleMatch || blogTextMatch || authorMatch;
         });
         updateBreadcrumb(searchParam);
+        toggleLoadMoreButton();
       }
 
       if (selected === "all") {
@@ -89,7 +87,7 @@ async function getPosts() {
         updateBreadcrumb(selected);
       }
 
-      let renderPosts = function (postsToRender) {
+      const renderPosts = function (postsToRender) {
         postListContainer.innerHTML = "";
         postsToRender.forEach((post) => {
           postListContainer.innerHTML += `
@@ -106,11 +104,27 @@ async function getPosts() {
             </div>
           `;
         });
+        const renderedPostcards = document.querySelectorAll(".posts-card");
+        for (let i = 10; i < postsToRender.length; i++) {
+          renderedPostcards[i].classList.add("is-hidden");
+          renderedPostcards[i].classList.remove("card");
+        }
       };
-
       renderPosts(postsToDisplay);
       const cards = document.querySelectorAll(".posts-card");
       addScrollEffect(cards, 0.2);
+      toggleLoadMoreButton();
+
+      loadMoreButton.addEventListener("click", () => {
+        const hiddenPostCards = document.querySelectorAll(".is-hidden");
+        hiddenPostCards.forEach((card) => {
+          card.classList.add("card");
+          card.classList.remove("is-hidden");
+        });
+        const updatedHiddenPostCards = document.querySelectorAll(".is-hidden");
+
+        if (updatedHiddenPostCards) toggleLoadMoreButton();
+      });
 
       searchBar.addEventListener("keyup", function () {
         const searchTerm = searchBar.value.trim().toLowerCase();
@@ -132,6 +146,7 @@ async function getPosts() {
         renderPosts(searchedPosts);
         let renderedPostcards = document.querySelectorAll(".posts-card");
         addScrollEffect(renderedPostcards, 0.2);
+        toggleLoadMoreButton();
       });
 
       const sorter = document.getElementById("sort-by");
@@ -166,6 +181,7 @@ async function getPosts() {
           renderPosts(sortedPosts);
           let renderedPostcards = document.querySelectorAll(".posts-card");
           addScrollEffect(renderedPostcards, 0.2);
+          toggleLoadMoreButton();
         });
       };
 

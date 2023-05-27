@@ -45,3 +45,7 @@
 .is-active {
   border-bottom: 1px solid var(--clr-accent-600);
 }
+
+.u-light-text {
+  color: var(--clr-primary-900);
+}

@@ -70,7 +70,7 @@
         <h1 class="u-section__heading">Message us</h1>
         <div class="container">
           <div id="validation-message"></div>
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" autocomplete="on">
             <div class="input-section">
               <div class="form__element form__element--email">
                 <label for="email" class="label_email">E-mail:</label>
@@ -80,6 +80,7 @@
                   placeholder="example@email.com"
                   class="contact_email"
                   aria-describedby="email-error"
+                  autocomplete="email"
                 />
               </div>
               <div class="form-error is-hidden" id="email-error">
@@ -96,6 +97,7 @@
                   id="name"
                   class="contact_name"
                   aria-describedby="name-error"
+                  autocomplete="name"
                 />
               </div>
               <div class="form-error is-hidden" id="name-error">
@@ -147,13 +149,15 @@
       <nav class="footer__nav">
         <ul class="nav-links nav-links--footer">
           <li class="nav-link"><a href="posts.html">posts</a></li>
-          <li class="nav-link"><a href="#">about us</a></li>
-          <li class="nav-link"><a href="#">contact</a></li>
+          <li class="nav-link"><a href="about.html">about us</a></li>
+          <li class="nav-link"><a href="contact.html">contact</a></li>
           <li class="u-coloumn nav-categories">
-            <a class="nav-link" href="#">categories:</a>
-            <a class="nav-link" href="#">training</a>
-            <a class="nav-link" href="#">nutrition</a>
-            <a class="nav-link" href="#">gear</a>
+            <h4 class="nav-link">categories⌄</h4>
+            <a class="nav-link" href="posts.html?category=training">training</a>
+            <a class="nav-link" href="posts.html?category=nutrition"
+              >nutrition</a
+            >
+            <a class="nav-link" href="posts.html?category=gear">gear</a>
           </li>
         </ul>
         <div class="u-coloumn nav__bottom">

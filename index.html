@@ -23,6 +23,8 @@
 
     <meta name="author" content="Hallvard Benan" />
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js" defer></script>
     <script src="/js/app.js" type="module" defer></script>
     <script src="/js/header.js" type="module" defer></script>
     <script src="/js/toTop.js" type="module" defer></script>
@@ -87,9 +89,6 @@
         <div class="wave-container box">
           <section class="latest-posts-section u-section container">
             <h2 class="u-section__heading">New posts:</h2>
-            <!-- <h2 class="u-section__heading">Latest posts:</h2> -->
-            <!-- <a href="posts.html">See all </a> -->
-            <!-- Slider main container -->
             <div class="swiper">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
@@ -248,7 +247,7 @@
           </section>
         </div>
         <section class="we-cover u-section">
-          <h2 class="u-section__heading">explore these topics</h2>
+          <h2 class="u-section__heading u-light-text">explore these topics</h2>
           <div class="topics">
             <a href="posts.html?category=training" class="topic topics__training">
               <h3>training</h3>
@@ -277,37 +276,52 @@
           </div>
         </div>
         </section>
-        <section class="u-section">
-          <h2 class="u-section__heading">About us:</h2>
-          <div class="container">
-            <img
-              src="/assets/about.png"
-              alt="people running on a track with the beyond pace logo"
-            />
-            <p class="copy" style="max-width: 85ch">
-              At Beyond Pace, we are passionate about running and dedicated to
-              helping individuals become better runners, regardless of their skill
-              level. Whether you're an advanced runner striving for victory or a
-              new runner seeking inspiration, we're here to support and guide you
-              on your running journey. Our mission is to provide valuable
-              resources, expert tips, and motivating content to empower runners of
-              all backgrounds and abilities. We believe that running has the power
-              to transform lives, enhance physical and mental well-being, and
-              create a vibrant community. Join us as we share knowledge, celebrate
-              achievements, and inspire each other to reach new heights in the
-              exhilarating world of running. Together, we can go the distance and
-              unlock our true running potential.
+        <div class="wavy-2">
+          <section class="u-section box--about">
+            <h2 class="u-section__heading  u-light-text">About us:</h2>
+            <div class="post-container container">
+          
+              <div class="post__img">
+                <img
+                  src="/assets/track-logo.png"
+                  alt="people running on a track with the beyond pace logo"
+                  class="post__img--about"
+                />
+              </div>
+              <p class="copy">
+                At Beyond Pace, we are passionate about running and dedicated to
+                helping individuals become better runners, regardless of their skill
+                level. Whether you're an advanced runner striving for victory or a
+                new runner seeking inspiration, we're here to support and guide you
+                on your running journey. <p>
+                  Our mission is to provide valuable
+                  resources, expert tips, and motivating content to empower runners of
+                  all backgrounds and abilities. We believe that running has the power
+                  to transform lives, enhance physical and mental well-being, and
+                  create a vibrant community.
+                </p> <p>
+                  Join us as we share knowledge, celebrate
+                  achievements, and inspire each other to reach new heights in the
+                  exhilarating world of running.
+                </p> <p>
+                  Together, we can go the distance and
+                  unlock our true running potential.
+                </p>
+              </p>
+            </div>
+          </section>
+        </div>
+        <section class="u-section section--get-in-touch bottom">
+          <h2 class="u-section__heading">Get in touch:</h2>
+          <div class="container container--get-in-touch">
+            <h3>
+              We strive to be community oriented. 
+            </h3>
+            <p>
+              If you have any questions or
+              input, we would love to hear from you:
             </p>
-          </div>
-        </section>
-        <section class="u-section">
-          <h2 class="section-heading">Get in toutch:</h2>
-          <div class="container">
-            <p class="copy">
-              We strive to be community oriented. If you have any questions or
-              input,we would love to hear from you
-            </p>
-            <a href="contact.html" class="cta">Contact us</a>
+            <a href="contact.html" class="cta">Contact us <i class="fa-solid fa-envelope"></i></a>
           </div>
         </section>
         <div class="to-top">
@@ -338,49 +352,5 @@
           </div>
         </nav>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        // Optional parameters
-        slidesPerView: 1,
-        spaceBetween: 10,
-        centeredSlides: false,
-        slidesPerGroupSkip: 0,
-        grabCursor: true,
-        observer: true,
-        observeParents: true,
-        keyboard: {
-          enabled: true,
-        },
-        breakpoints: {
-          575: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            spaceBetween: 10,
-          },
-          900: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            spaceBetween: 10,
-          },
-          1100: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-            spaceBetween: 10,
-          },
-        },
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
   </body>
 </html>

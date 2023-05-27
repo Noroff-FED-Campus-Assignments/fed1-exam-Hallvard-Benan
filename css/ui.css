@@ -123,6 +123,11 @@ body {
   text-transform: uppercase;
   align-items: center;
   gap: 1rem;
+  max-width: 90vw;
+}
+
+.hero-logo img {
+  height: var(--fs-heading-primary);
 }
 
 .hero__text {
@@ -164,12 +169,14 @@ body {
   border-radius: 0.8rem;
   text-align: center;
   transition: all 200ms ease-in-out;
+  color: var(--clr-primary-900);
 }
 
 .cta:hover {
   background-color: var(--clr-accent-800);
 }
-/* wavy border */
+
+/* wavy border from https://css-generators.com/ */
 .main--wavy {
   background-color: var(--clr-accent-600);
 }
@@ -187,8 +194,13 @@ body {
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
-/* topics section */
 
+.bottom {
+  clip-path: polygon(0 0, 50% 50px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -40px;
+}
+
+/* topics section */
 .topics {
   display: flex;
   flex-wrap: wrap;
@@ -296,6 +308,26 @@ body {
   border-radius: 1rem;
   font-size: var(--fs-paragraph);
   padding: 1rem;
+}
+
+.load-more-button {
+  padding: 1rem 1.5rem;
+  text-transform: capitalize;
+  border: 1px var(--clr-primary-900);
+  font-size: var(--fs-cta-secondary);
+  font-weight: var(--fw-nav-primary);
+  background-color: var(--clr-primary-900);
+  border-radius: 1rem;
+  transition: all 250ms;
+}
+
+.load-more-button:hover {
+  color: var(--clr-accent-600);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.load-more-button.gone {
+  display: none;
 }
 
 /* post cards */
@@ -459,12 +491,13 @@ body {
   font-size: var(--fs-paragraph);
   line-height: 1.35;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 
 .post-container p,
 .post-container li {
   text-align: start;
-  max-width: 80ch;
+  max-width: 60ch;
   width: 90%;
   margin-inline: auto;
 }
@@ -510,8 +543,24 @@ dialog:modal::backdrop {
   background-color: rgba(0, 0, 0, 0.915);
 }
 
+/* about */
+.post__img--about {
+  width: 100%;
+}
+
+/* get in touch section */
+.section--get-in-touch {
+  font-size: var(--fs-paragraph);
+  background-color: var(--clr-primary-900);
+}
+
+.container--get-in-touch {
+  display: grid;
+  gap: 3rem;
+}
+
 /* media queries */
-@media (max-width: 1050px) {
+@media (max-width: 50em) {
   /* mobile header */
   .header--primary {
     bottom: 0;
