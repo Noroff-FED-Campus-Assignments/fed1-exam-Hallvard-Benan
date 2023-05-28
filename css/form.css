@@ -51,7 +51,6 @@ textarea {
 }
 
 .contact_submit {
-  color: var(--clr-primary-800);
   font-size: var(--fs-cta-primary);
   background-color: var(--clr-accent-600);
 }

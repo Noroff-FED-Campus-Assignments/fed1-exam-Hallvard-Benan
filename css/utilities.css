@@ -46,9 +46,9 @@
   border-bottom: 1px solid var(--clr-accent-600);
 }
 
-.u-light-text {
+/* .u-light-text {
   color: var(--clr-primary-900);
-}
+} */
 
 .u-background-banner {
   background-image: url(/assets/track-logo.png);

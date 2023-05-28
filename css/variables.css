@@ -1,16 +1,10 @@
-/*!
- * Variables
- * @tutorial https://web.dev/at-property/
- * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-4/css-variables
- */
-
 @import url("https://fonts.googleapis.com/css2?family=Belleza&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   /* Colors: */
 
-  --clr-primary-200: hsl(216, 10%, 14%);
+  --clr-primary-200: hsl(216, 10%, 19%);
   --clr-primary-500: hsl(0, 0%, 44%);
   --clr-primary-700: hsl(220, 7%, 92%);
   --clr-primary-800: hsl(230, 6%, 96%);
@@ -62,20 +56,12 @@
   --fw-heading-card: var(--fw-400);
   --fw-nav-primary: var(--fw-500);
 
-  /* button shadows */
-  --button-tactile: inset 2px 2px 4px rgba(255, 255, 255, 0.2);
-  --button-tactile-pressed: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  --button-tactile-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-
-  /* border-radius */
-  --rounded-100: 0.2em;
-  --rounded-200: 0.3em;
-
   /* padding */
   --padding-section: 6rem 0;
   --padding-hero: 6rem 0 8rem 0rem;
   --padding-main: 1rem;
 
+  /* gap */
   --gap-section: 4rem;
 
   /* width */
@@ -109,19 +95,16 @@
     --fs-nav-primary: var(--fs-600);
     --fs-nav-breadcrumb: var(--fs-300);
 
-    --button-border-primary: 1rem;
-
     --padding-section: 9rem 0;
     --padding-hero: 15rem 0;
     --padding-main: 10rem;
 
+    /* gap */
     --gap-section: 8rem;
 
     /* width */
     --logo-width: 6.5rem;
     --to-top-width: 60px;
-
-    --desktop-visible: block;
 
     /* height */
     --banner-height: 26rem;
