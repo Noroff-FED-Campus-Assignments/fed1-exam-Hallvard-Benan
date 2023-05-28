@@ -3,6 +3,7 @@ export const makeModal = function (container, images) {
     image.addEventListener("click", function () {
       container.innerHTML = this.innerHTML;
       container.showModal();
+      console.log(container.innerHTML);
       container.addEventListener("click", () => {
         container.close();
       });
