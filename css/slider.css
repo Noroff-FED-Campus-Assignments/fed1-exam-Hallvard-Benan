@@ -28,9 +28,9 @@
   bottom: 30px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 50em) {
   .swiper-button-next,
   .swiper-button-prev {
-    top: var(--swiper-navigation-top-offset, 50%);
+    top: var(--swiper-navigation-top-offset, 64%);
   }
 }
