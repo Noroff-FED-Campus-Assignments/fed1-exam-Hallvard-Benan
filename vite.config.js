@@ -11,6 +11,7 @@ export default defineConfig({
         posts: resolve(__dirname, "posts.html"),
         blogDetail: resolve(__dirname, "post.html"),
         about: resolve(__dirname, "about.html"),
+        privacy: resolve(__dirname, "privacy.html"),
       },
     },
   },
