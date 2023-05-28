@@ -99,7 +99,7 @@ async function getPosts() {
               <p class="card__tagline">${post.fields.Short_excerpt}</p>
               <div class="card__details">
                 <div class="card__details__date">${post.fields.publish_date}</div>
-                <a href="post.html?id=${post.id}" class="cta card__cta">read more</a>
+                <a href="post.html?id=${post.id}" class="cta card__cta">read</a>
               </div>
             </div>
           `;

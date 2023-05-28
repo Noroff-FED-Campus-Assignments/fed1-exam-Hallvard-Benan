@@ -417,7 +417,7 @@ body {
 .posts-card.showing {
   transform: translateY(0);
   opacity: 1;
-  max-width: 90vw;
+  max-width: 80vw;
 }
 
 /* hovering "to-top" button */
@@ -648,4 +648,26 @@ dialog:modal::backdrop {
   .posts-list {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* disclaimers */
+
+.cookies-modal {
+  z-index: 5;
+  position: fixed;
+}
+
+.cookies-modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.privacy-policy {
+  padding: 2rem 0;
+}
+
+.privacy-policy__link {
+  color: var(--clr-accent-600);
+  text-decoration: underline;
 }

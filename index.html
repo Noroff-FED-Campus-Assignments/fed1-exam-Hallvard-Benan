@@ -28,6 +28,7 @@
     <script src="/js/app.js" type="module" defer></script>
     <script src="/js/header.js" type="module" defer></script>
     <script src="/js/toTop.js" type="module" defer></script>
+    <script src="js/functions/cookies-modal.js" defer></script>
     <!-- Hotjar Tracking Code for beyond pace -->
 <script>
   (function(h,o,t,j,a,r){
@@ -37,8 +38,8 @@
       r=o.createElement('script');r.async=1;
       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
       a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
     <title>Beyond Pace | Home</title>
   </head>
   <body class="animate__animated animate__fadeIn">
@@ -46,9 +47,9 @@
       <div class="header-nav header--primary">
         <nav class="primary-header__nav container">
           <a href="index.html" class="nav__logo"
-            ><img src="/assets/logos/headerlogo.svg" alt="logo" type="svg+xml"
+          ><img src="/assets/logos/headerlogo.svg" alt="logo" type="svg+xml"
           /></a>
-          <button class="hamburger-menu">
+          <button class="hamburger-menu" aria-label="menu-button">
             <i class="fa-solid fa-bars"></i>
           </button>
           <ul class="nav-links closed">
@@ -63,7 +64,14 @@
         </nav>
       </div>
     </header>
-
+    <dialog class="cookies-modal">
+      <div class="cookies-modal__content">
+        <p>this site uses cookies to improve user experience</p>
+        <button class="cookies-modal-button">Accept</button>
+        <a href="privacy.html">Learn more</a>
+      </div>
+    </dialog>
+    
     <main class="main--wavy">
       <section class="hero container">
         <div class="hero__text">
@@ -81,8 +89,9 @@
               class="hero__inputs__search__searchbar"
               name="search"
               id="link-search"
+              aria-label="search posts input"
             />
-           <button class="hero__inputs__search__button" id="link-search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+           <button class="hero__inputs__search__button" id="link-search-button" aria-label="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div>
       </section>
@@ -332,26 +341,34 @@
         </div>
     </main>
 
+
     <footer class="l-footer footer-primary u-section">
-        <nav class="footer__nav">
-          <ul class="nav-links nav-links--footer">
-            <li class="nav-link"><a href="posts.html">posts</a></li>
-            <li class="nav-link"><a href="about.html">about us</a></li>
-            <li class="nav-link"><a href="contact.html">contact</a></li>
-            <li class="u-coloumn nav-categories">
+      <nav class="footer__nav">
+        <ul class="nav-links nav-links--footer">
+          <li class="nav-link"><a href="posts.html">posts</a></li>
+          <li class="nav-link"><a href="about.html">about us</a></li>
+          <li class="nav-link"><a href="contact.html">contact</a></li>
+          <li class="u-coloumn nav-categories">
               <h4 class="nav-link">categories⌄</h4>
               <a class="nav-link" href="posts.html?category=training">training</a>
-              <a class="nav-link" href="posts.html?category=nutrition">nutrition</a>
+              <a class="nav-link" href="posts.html?category=nutrition"
+              >nutrition</a
+              >
               <a class="nav-link" href="posts.html?category=gear">gear</a>
             </li>
-          </ul>
-          <div class="u-coloumn nav__bottom">
-            <a href="index.html"><img src="/assets/logos/round-logo-white.svg" alt="beyond pace logo"></a>
-            <a href="https://github.com/Hallvard-Benan" target="_blank"
-              >&copy; Made by Hallvard Benan</a
-            >
-          </div>
-        </nav>
+            <li class="nav-link"><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+        <div class="u-coloumn nav__bottom">
+          <a href="index.html"
+            ><img
+              src="/assets/logos/round-logo-white.svg"
+              alt="beyond pace logo"
+          /></a>
+          <a href="https://github.com/Hallvard-Benan" target="_blank"
+            >&copy; Made by Hallvard Benan</a
+          >
+        </div>
+      </nav>
     </footer>
   </body>
 </html>
