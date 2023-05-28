@@ -672,7 +672,8 @@ dialog:modal::backdrop {
   padding: 2rem 0;
 }
 
-.privacy-policy__link {
-  color: var(--clr-accent-600);
+.privacy-policy__link,
+.cookies-modal__content a {
+  color: var(--clr-contrast-400);
   text-decoration: underline;
 }

@@ -29,6 +29,7 @@ const requestOptions = {
   redirect: "follow",
 };
 
+// navigates to posts page from index page using the searchbar value as url parameters
 if (linkingSearchButton) {
   linkingSearchButton.addEventListener("click", handleLinkingSearch);
 
@@ -39,6 +40,7 @@ if (linkingSearchButton) {
   });
 }
 
+//Get multiple posts to use in lists
 async function getPosts() {
   try {
     const response = await fetch(url, requestOptions);
@@ -198,7 +200,7 @@ async function getPosts() {
               <h3 class="swiper-slide__title">${post.fields.Title}</h3>
               <p class="slider__card__tagline">${post.fields.Short_excerpt}
               <div class="card__details">
-                <a href="post.html?id=${post.id}" class="cta card__cta">See more</a>
+                <a href="post.html?id=${post.id}" class="cta card__cta">Read Post</a>
               </div>
         </div>
         `;
