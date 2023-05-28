@@ -1,6 +1,8 @@
-import { filterPostsByCategory } from "./functions/filter";
-import { updateBreadcrumb } from "./functions/filter";
-import { handleLinkingSearch } from "./functions/filter";
+import {
+  updateBreadcrumb,
+  handleLinkingSearch,
+  filterPostsByCategory,
+} from "./functions/filter";
 import { addScrollEffect } from "./functions/scrollEffect";
 import { makeModal } from "./functions/imageModal";
 import { toggleLoadMoreButton } from "./functions/load-more-button";

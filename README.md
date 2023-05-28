@@ -14,9 +14,9 @@ This project was bootstrapped with Vite.
 <!-- You must replace these links -->
 
 - [Brief](https://fed-vocational-astro-course.vercel.app/en/exam-1/brief)
-- [Design](_LINK_TO_FIGMA_)
+- [Design](https://www.figma.com/file/ESmnwLtU3ELhJ4WRmK4rCz/Semester-exam-spring-23?type=design&node-id=52%3A3867&t=xsOPQo4iQjJWHHZw-1)
 - [Production deploy](https://beyondpace.netlify.app/)
-- [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
+- [Deployment CI](https://app.netlify.com/sites/beyondpace/deploys)
 - [API Docs](https://airtable.com/developers/web/api/introduction)
 - [API Endpoint](https://api.airtable.com/v0/appl0dccTyyqBSUBd/tblsXxvmbCoIBmQEZ)
 
@@ -112,33 +112,35 @@ All of these todo's must be done to pass the asssignment.
 
 Make sure you go through this checklist before submitting your project to Moodle.
 
-- [ ] All pages have a meta description.
-- [ ] All pages have a valid title.
-- [ ] All pages import the correct css files.
-- [ ] All pages import the correct JS file.
-- [ ] Details page URL includes a query param.
-- [ ] My website makes a GET request to an API to get a list of results.
-- [ ] My website makes a GET request to an API to get details of one result.
-- [ ] Input fields have the following attributes;
-- [ ] All images have an alt tag;
-  - [ ] A name,
-  - [ ] A placeholder,
-  - [ ] A aria-describedby,
-  - [ ] Required
-- [ ] I have not copied Javascript code.
-- [ ] I have not used a Javascript library.
-- [ ] Removed all unused files.
-- [ ] Named all images properly.
-- [ ] Committed all my code to github.
-- [ ] My repo is publically viewable.
-- [ ] I've submitted/ written a report.
-- [ ] I've removed all todo notes in code.
-- [ ] I've removed all console logs in code.
-- [ ] Code is formatted correctly.
-- [ ] There are no red underlines in VSCode.
-- [ ] There are no error messages in the terminal when I run the project.
-- [ ] My code is indented correctly.
-- [ ] I've checked my report for grammer & spelling using grammerly or chatGPT
+"[*]" = Explained in report
+
+- [x] All pages have a meta description.
+- [x] All pages have a valid title.
+- [x] All pages import the correct css files.
+- [x] All pages import the correct JS file.
+- [x] Details page URL includes a query param.
+- [x] My website makes a GET request to an API to get a list of results.
+- [x] My website makes a GET request to an API to get details of one result.
+- [x] Input fields have the following attributes;
+- [x] All images have an alt tag;
+  - [x] A name,
+  - [x] A placeholder,
+  - [x] A aria-describedby,
+  - [x] Required
+- [x] I have not copied Javascript code.
+- [*] I have not used a Javascript library.
+- [x] Removed all unused files.
+- [x] Named all images properly.
+- [x] Committed all my code to github.
+- [x] My repo is publically viewable.
+- [x] I've submitted/ written a report.
+- [x] I've removed all todo notes in code.
+- [x] I've removed all console logs in code.
+- [x] Code is formatted correctly.
+- [*] There are no red underlines in VSCode.
+- [*] There are no error messages in the terminal when I run the project.
+- [x] My code is indented correctly.
+- [x] I've checked my report for grammer & spelling using grammerly or chatGPT
 - [ ] I've used used [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [ ] I've checked off every todo in this README.
 
@@ -158,5 +160,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 
 ## Authors
 
-- _YOURE_NAME_ (@_your_github_username_)
+- Hallvard Benan (@Hallvard-Benan)
 - Monde Sineke (@S3ak)
