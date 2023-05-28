@@ -256,7 +256,7 @@ async function getPost() {
     const post = result;
     let oldBlogText = post.fields["blog text"];
     let newBlogText = oldBlogText.replace(/["'`]/g, "");
-    documentTitle.innerHTML = post.fields.Title;
+    documentTitle.innerHTML += post.fields.Title;
     postTitile.innerHTML = post.fields.Title;
     breadCrumbTitle.innerHTML = post.fields.Title;
     const skeletonUi = document.querySelectorAll(".skeleton");
