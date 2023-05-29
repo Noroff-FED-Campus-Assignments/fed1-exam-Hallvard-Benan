@@ -481,7 +481,12 @@ body {
 .post__list,
 .post__list-item,
 .post__section,
-.post__text {
+.post__text,
+.post__text div,
+.post__text ul,
+.post__text ol,
+.post-container p,
+.post-container li {
   display: grid;
 }
 
@@ -508,10 +513,13 @@ body {
   max-width: 60ch;
   width: 90%;
   margin-inline: auto;
+  gap: 1rem;
 }
 
-.post__list-item {
-  position: relative;
+.post__text ol,
+.post__text ul,
+.post__text div {
+  gap: 1.5rem;
 }
 
 .post__section,
