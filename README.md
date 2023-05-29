@@ -29,7 +29,100 @@ YOu can update your deployment pipeling by editing the [vercel.json](https://ver
 
 ## Report
 
-_ADD_YOUR_REPORT_HERE_
+# Report for fed1-exam, Hallvard Benan
+
+## Introduction
+
+For this assignment, I chose to make a running blog. Due to my newfound interest in running, I had recently done a lot of research on the topic, and so felt like a good choice. I started the assignment with a brainstorming session, where I wrote out all my ideas by hand. Ideas for topics, titles, features, and some (very) low-fi wireframes.
+
+I brought some of my thoughts over to Figma, where I made multiple low-fi wireframes of what the site could look like, as well as searched for inspiration on sites like Dribble, and real running and fitness blogs.
+
+As I had chosen running as the theme for the site, I wanted my color scheme to reflect that, with a light-colored theme with yellow/ orange accents, and some dark grey/blue to contrast.
+I chose rounded corners to give a welcoming impression of the site. For legibility, I chose a neutral sans font for most of the website, and a slightly stylized one for branding, In order to set the site apart a bit from all the ones I had researched.
+
+I originally had white text on yellow backgrounds in cta buttons and on the home page, however, after running Lighthouse, I did not get 100% on accessibility because of the low contrast of these elements. I therefore decided to change the text color to a dark grey to accommodate, which did fix the issue, however, I did personally prefer the aesthetics of the previous version.
+
+The logo, or logos, consist of a few different parts. A running shoe, some wind lines to indicate speed, and the blog name with the stylized font. These are mixed and matched based on the context. For example, since the whole logo would be impossible to fit and see in the favicon, I chose to use only the wind lines, but in the branding accent color.
+
+For content management, I chose Airtable, because it is easy to work with and feels easier to customize for a given project than WordPress. It also provides a free plan with a REST API. decided to use chat GPT to write the posts, instead of using lorem ipsum filler text, as it didn’t take much more time, and makes the site look a lot more “real”.
+
+## Features:
+
+### General features:
+
+Hotjar tracking is installed on every page. Because of this, a cookie disclaimer has also been added. The cookies disclaimer adds a dialog element to any page if there are no active cookies. If the user clicks accept, a cookie is added that lasts for 30 days. This way, the dialog box doesn’t open each time a user navigates to a different page. Under the accept button is a link to the privacy policy page, which includes the suggested copy from Hotjar.
+
+The navigation bar moves to the bottom of the screen on smaller devices, for improved usability for mobile users after some feedback on the top-aligned version I was initially implementing.
+
+To top button, appears on the right-hand part of the screen after a certain amount of scrolling, and takes the user back to the top of the page when clicked.
+
+A skeleton ui loading animation is displayed until the fetch request is completed, and an error screen is displayed if there is an error with the request.
+
+### Home page
+
+Search functionality on the home page navigates the user to the posts page using the value of the search bar, both when the search button is clicked and on enter keypress.
+
+Post carousel displaying different amounts of posts depending on screen size. This was made using Swiper.js. I had been working on my own carousel for a while, but when I was told we were allowed to use swiper.js, I decided to test it and ended up implementing a much better carousel than the one I had been working on within the hour.
+
+### Posts page:
+
+The posts page has filters for categories, search functionality, and alphabetized and date-based sorting of the results.
+
+There is an animation for each card, that plays as a user scrolls down the page.
+
+There is a “load more”-button that loads the remaining posts, as the number of posts is limited to 10.
+
+A breadcrumb menu at the top left of the posts page displays which category or search term is being displayed.
+
+### Contact page:
+
+Each input in the contact form is validated using javascript and displays an error message, or a green border depending on the input. When all inputs are validated and the form is submitted, a success modal is displayed, along with a link back to the main page.
+
+## Possible future implementations:
+
+Submitting data through the contact form, and making a functional comment section are both possible with Airtable. However, since the requests are being executed in the front end, the API key would still be visible within the developer tools of the browser, which is fine for GET requests for now. I did a little searching and I think it would be “safer” to do it with backend/ serverless functions, so the key never gets to the client, only the data. However, it fell outside my priorities on this assignment.
+
+Dark mode, either through media query or with a switch.
+
+More descriptive alt tags for the fetched images can be added as values in Airtable, and the rendering function can be updated.
+
+As of yet, there is no way to refuse cookies on the site, other than blocking them yourself. If possible, an option to opt out of cookies could be added in the future.
+
+## _ Explanation for _ in the checklist:
+
+I did not use any javascript libraries or frameworks, I did use swiper.js, but since we were allowed to, I'm not sure whether to check this or not.
+There are red underlines in vs code, and the console logs errors, but these are related to swiper.js and Hotjar.
+
+## Sources:
+
+Border shapes from: https://css-generators.com/
+
+Icons:
+
+- https://fontawesome.com/
+- https://www.figma.com/community/plugin/735098390272716381/Iconify
+- https://www.figma.com/community/file/903830135544202908/Phosphor-Icons
+
+Images:
+
+- https://unsplash.com/
+- https://www.freepik.com/
+
+Blog text and other copy:
+
+- https://chat.openai.com/
+
+tracking and privacy page copy:
+
+- https://hotjar.com
+
+Skeleton loading ui, scroll effects, and image modal inspired by (not directly copied)
+
+Web Dev Simplified:
+
+- https://blog.webdevsimplified.com/2023-04/html-dialog/
+- https://www.youtube.com/results?search_query=skeleton+loading
+- https://www.youtube.com/watch?v=2IbRtjez6ag
 
 ## Getting Started
 
@@ -47,7 +140,7 @@ All of these todo's must be done to pass the asssignment.
 - [x] A error message is present when the End-user encounters a error while viewing the details page.
 - [x] As a customer I can view the title of the item on the browser tab for a details page.
 - [x] As a customer I can view validation message when they input an incorrect name.
-- [ ] As a customer I can view validation message when they input an incorrect subject that is less than 15 characters.
+- [x] As a customer I can view validation message when they input an incorrect subject that is less than 15 characters.
 - [x] As a customer I can view validation message when they input an incorrect Email address.
 - [x] As a customer I can view a validation message when they input an incorrect physical address that is less than 25 characters long
 - [x] As a customer I want to be able to view the latest blog posts on the home page.
@@ -87,26 +180,26 @@ All of these todo's must be done to pass the asssignment.
 - [x] As a customer, I want to be able to sort, filter, or search the blog posts, so that I can quickly find the content that is most relevant to me.
 - [ ] As a customer, I want to be able to submit comments on a blog post, so that I can engage with other readers and share my thoughts on the topic.
 
-- [ ] [End-user experiences a complete custom UI design.](https://www.figma.com/file/KExTTAE75DRhq2xTvapFR4/FED-Whiteboard?node-id=0%3A1&t=UItKehGgT8gRlibY-1)
+- [x] [End-user experiences a complete custom UI design.](https://www.figma.com/file/KExTTAE75DRhq2xTvapFR4/FED-Whiteboard?node-id=0%3A1&t=UItKehGgT8gRlibY-1)
 
-  - [ ] Is user-friendly
-  - [ ] Effective use of the pillars of design
-    - [ ] Typography
-    - [ ] Colour
-    - [ ] Composition
-    - [ ] Art Direction
-    - [ ] Motion
-  - [ ] Adhered to principles of design
-    - [ ] Contrast
-    - [ ] Balance and alignment
-    - [ ] Emphasis
-    - [ ] Proportion
-    - [ ] Hiearchy
-    - [ ] Repetition
-    - [ ] Ryhthem
-    - [ ] Pattern
-    - [ ] Negative space
-    - [ ] Movement
+  - [x] Is user-friendly
+  - [x] Effective use of the pillars of design
+    - [x] Typography
+    - [x] Colour
+    - [x] Composition
+    - [x] Art Direction
+    - [x] Motion
+  - [x] Adhered to principles of design
+    - [x] Contrast
+    - [x] Balance and alignment
+    - [x] Emphasis
+    - [x] Proportion
+    - [x] Hiearchy
+    - [x] Repetition
+    - [x] Ryhthem
+    - [x] Pattern
+    - [x] Negative space
+    - [x] Movement
 
 ## Checklist
 
