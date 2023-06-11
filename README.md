@@ -1,6 +1,6 @@
 # Beyond Pace
 
-![image](https://github.com/Noroff-FED-Campus-Assignments/fed1-exam-Hallvard-Benan/blob/master/Skjermbilde%202023-06-11%20kl.%2020.35.16.png)
+<a href="https://beyondpace.netlify.app">![image](https://github.com/Noroff-FED-Campus-Assignments/fed1-exam-Hallvard-Benan/blob/master/Skjermbilde%202023-06-11%20kl.%2020.35.16.png)</a>
 
 A running blog
 
