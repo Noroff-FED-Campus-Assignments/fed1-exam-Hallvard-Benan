@@ -22,6 +22,13 @@ This site contains blog posts about running, that the user can search, filter an
 - HTML/CSS
 - [Swiper.js](https://swiperjs.com/)
 - [Airtable](https://www.airtable.com/)
+- ## Application stack
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [Prettier](https://prettier.io/) - An opinionated code formatter
+- [Eslint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Open-props](https://open-props.style/) - Supercharged
+  CSS variables.
+- [Animate.css](https://animate.style/) - Just-add-water CSS animations
 
 ## Getting Started
 
