@@ -29,6 +29,7 @@ This site contains blog posts about running, that the user can search, filter an
 - [Open-props](https://open-props.style/) - Supercharged
   CSS variables.
 - [Animate.css](https://animate.style/) - Just-add-water CSS animations
+- [FontAwesome](https://fontawesome.com/)
 
 ## Getting Started
 
