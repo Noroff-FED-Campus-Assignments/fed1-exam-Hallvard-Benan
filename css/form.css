@@ -1,15 +1,99 @@
-/*!
- * Forms
- * form classes use the c- prefix to indicate they are components used in layout.
- * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
- */
+.contact-form {
+  background-color: var(--clr-primary-900);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  width: 90vw;
+  max-width: 50rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
+}
 
-.c-form {
+.contact-form.exit {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.contact-form input,
+textarea {
+  border-radius: 0.6rem;
+  min-height: 3.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+.form__element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form__element input {
+  width: 100%;
+}
+
+.form__element label {
+  width: 3.5rem;
+}
+
+.form__element .contact_message {
+  height: 15rem;
+  line-height: 2rem;
+  resize: none;
+}
+
+.contact_submit {
+  font-size: var(--fs-cta-primary);
+  background-color: var(--clr-accent-600);
+}
+
+.contact_submit:hover {
+  background-color: var(--clr-accent-800);
+  cursor: pointer;
+}
+
+input {
+  border: 2px solid black;
+}
+
+.form-error {
+  color: red;
+  animation: var(--animation-shake-y);
+}
+
+.valid {
+  border: 4px solid green;
+}
+
+.error {
+  border-color: red;
+}
+
+.form-success {
+  text-align: center;
+  background-color: var(--clr-primary-900);
+  padding: 4rem;
+  opacity: 0;
+  border-radius: 1rem;
+  border: 4px solid green;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: var(--spacing-1);
-  padding: var(--spacing-1);
-  background-color: var(--color-white);
-  border-radius: var(--radius-1);
-  box-shadow: var(--shadow-1);
+  justify-content: space-evenly;
+  animation: var(--animation-fade-in) forwards;
+  animation-timing-function: var(--ease-in-1);
+  animation-duration: 0.3s;
+  margin-bottom: 2rem;
+  height: 50vh;
+}
+
+.form-success__checkmark i {
+  color: green;
+  font-size: 15rem;
 }

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="fav-icon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Pace | Posts</title>
+    <meta
+      name="description"
+      content="see posts from Beyond Pace, the running blog for everyone"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, running, blog, performance, nutrition, posts, list, all"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/js/app.js" type="module" defer></script>
+    <script src="/js/header.js" type="module" defer></script>
+    <script src="/js/toTop.js" type="module" defer></script>
+    <script src="js/cookies-modal.js" type="module" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c4e13e4f8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Hotjar Tracking Code for beyond pace -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3507705, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-nav header--primary">
+        <nav class="primary-header__nav container">
+          <a href="index.html" class="nav__logo"
+            ><img src="/assets/logos/headerlogo.svg" alt="logo" type="svg+xml"
+          /></a>
+          <button class="hamburger-menu" aria-label="menu-button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-links closed">
+            <li class="nav-link nav-link--divider">
+              <a href="posts.html" class="is-active">posts</a>
+            </li>
+            <li class="nav-link nav-link--divider">
+              <a href="about.html">about us</a>
+            </li>
+            <li class="nav-link"><a href="contact.html">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <dialog class="cookies-modal">
+      <div class="cookies-modal__content">
+        <p>this site uses cookies to improve user experience</p>
+        <button class="cookies-modal-button">Accept</button>
+        <a href="privacy.html"
+          >click here to see more about our privacy policy</a
+        >
+      </div>
+    </dialog>
+    <main class="l-main">
+      <div class="breadcrumb container">
+        <nav class="breadcrumb__nav">
+          <a href="#">Blog posts</a>
+          <a href="posts.html" class="breadcrumb-active is-active"
+            >/ all posts /</a
+          >
+          <a href="#" class="breadcrumb-category"></a>
+        </nav>
+      </div>
+      <section class="u-section">
+        <h2 class="u-section__heading">Posts:</h2>
+        <div class="post-filters">
+          <select name="sort-by" id="sort-by" class="post-filters__select">
+            <option value="" selected>sort by</option>
+            <option value="new-old">date: newest</option>
+            <option value="old-new">date: oldest</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+          </select>
+          <select name="category" id="category" class="post-filters__select">
+            <option value="" selected>chose a category</option>
+            <option value="all">all</option>
+            <option value="training">training</option>
+            <option value="nutrition">nutrition</option>
+            <option value="gear">gear</option>
+          </select>
+          <div class="post-filters__search">
+            <input
+              aria-label="search input"
+              type="search"
+              placeholder="search posts, author..."
+              class="hero__inputs__search__searchbar post-filters__search-bar"
+              name="search"
+            />
+            <button
+              type="submit"
+              class="post-filters__btn"
+              aria-label="search-button"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="posts-list container">
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+          <div class="card skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton skeleton-tagline"></div>
+            <div class="skeleton-details">
+              <div class="skeleton skeleton-date"></div>
+              <div class="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="load-more-button" aria-label="load more posts button">
+            load more...<i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </section>
+      <section class="u-section">
+        <div class="to-top">
+          <a href="#"
+            ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
+          /></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="l-footer footer-primary u-section">
+      <nav class="footer__nav">
+        <ul class="nav-links nav-links--footer">
+          <li class="nav-link"><a href="posts.html">posts</a></li>
+          <li class="nav-link"><a href="about.html">about us</a></li>
+          <li class="nav-link"><a href="contact.html">contact</a></li>
+          <li class="u-coloumn nav-categories">
+            <h4 class="nav-link">categories⌄</h4>
+            <a class="nav-link" href="posts.html?category=training">training</a>
+            <a class="nav-link" href="posts.html?category=nutrition"
+              >nutrition</a
+            >
+            <a class="nav-link" href="posts.html?category=gear">gear</a>
+          </li>
+          <li class="nav-link"><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+        <div class="u-coloumn nav__bottom">
+          <a href="index.html"
+            ><img
+              src="/assets/logos/round-logo-white.svg"
+              alt="beyond pace logo"
+          /></a>
+          <a href="https://github.com/Hallvard-Benan" target="_blank"
+            >&copy; Made by Hallvard Benan</a
+          >
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>

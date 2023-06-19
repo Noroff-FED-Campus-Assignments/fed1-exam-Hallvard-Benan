@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About us at beyond pace, the running blog for everyone"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, running, blog, performance, nutrition"
+    />
+    <script
+      src="https://kit.fontawesome.com/c4e13e4f8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="author" content="Hallvard Benan" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/js/app.js" type="module" defer></script>
+    <script src="/js/header.js" type="module" defer></script>
+    <script src="/js/toTop.js" type="module" defer></script>
+    <script src="js/cookies-modal.js" type="module" defer></script>
+    <!-- Hotjar Tracking Code for beyond pace -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3507705, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+    <title>Beyond Pace | About us</title>
+  </head>
+  <body class="animate__animated animate__fadeIn">
+    <header class="header">
+      <div class="header-nav header--primary">
+        <nav class="primary-header__nav container">
+          <a href="index.html" class="nav__logo"
+            ><img src="/assets/logos/headerlogo.svg" alt="logo" type="svg+xml"
+          /></a>
+          <button class="hamburger-menu" aria-label="menu-button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-links closed">
+            <li class="nav-link nav-link--divider">
+              <a href="posts.html">posts</a>
+            </li>
+            <li class="nav-link nav-link--divider">
+              <a href="about.html" class="is-active">about us</a>
+            </li>
+            <li class="nav-link"><a href="contact.html">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <dialog class="cookies-modal">
+      <div class="cookies-modal__content">
+        <p>this site uses cookies to improve user experience</p>
+        <button class="cookies-modal-button">Accept</button>
+        <a href="privacy.html">click here to see more about our privacy policy</a>
+      </div>
+    </dialog>
+    <main class="l-main">
+      <section class="u-section box--about">
+        <h2 class="u-section__heading">About us:</h2>
+        <div class="post-container container">
+          <h3 class="about__we-love-running">We <span class="about__heart"><i class="fa-solid fa-heart"></i></span> running</h3>
+          <p>This is a running blog made by runners, for everyone.</p>
+          <p>
+            At Beyond Pace, we are passionate about running and dedicated to
+            helping individuals become better runners, regardless of their skill
+            level. Whether you're an advanced runner striving for victory or a
+            new runner seeking inspiration, we're here to support and guide you
+            on your running journey. <p>
+              Our mission is to provide valuable
+              resources, expert tips, and motivating content to empower runners of
+              all backgrounds and abilities. We believe that running has the power
+              to transform lives, enhance physical and mental well-being, and
+              create a vibrant community.
+            </p> <p>
+              Join us as we share knowledge, celebrate
+              achievements, and inspire each other to reach new heights in the
+              exhilarating world of running.
+            </p> <p>
+              Together, we can go the distance and
+              unlock our true running potential.
+            </p>
+              <div class="post__img">
+                <img
+                  src="/assets/track-logo.png"
+                  alt="people running on a track with the beyond pace logo"
+                  class="post__img--about"
+                />
+              </div>
+          </p>
+        </div>
+      </section>
+    </div>
+    <section class="u-section section--get-in-touch bottom">
+      <h2 class="u-section__heading">Get in touch:</h2>
+      <div class="container container--get-in-touch">
+        <h3>
+          We strive to be community oriented. 
+        </h3>
+        <p>
+          If you have any questions or
+          input, we would love to hear from you:
+        </p>
+        <a href="contact.html" class="cta">Contact us <i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </section>
+    <div class="to-top">
+      <a href="#"
+        ><img src="/assets/symbols/up-button.svg" alt="up-arrow"
+      /></a>
+    </div>
+    </main>
+
+  
+    <footer class="l-footer footer-primary u-section">
+      <nav class="footer__nav">
+        <ul class="nav-links nav-links--footer">
+          <li class="nav-link"><a href="posts.html">posts</a></li>
+          <li class="nav-link"><a href="about.html">about us</a></li>
+          <li class="nav-link"><a href="contact.html">contact</a></li>
+          <li class="u-coloumn nav-categories">
+              <h4 class="nav-link">categories⌄</h4>
+              <a class="nav-link" href="posts.html?category=training">training</a>
+              <a class="nav-link" href="posts.html?category=nutrition"
+              >nutrition</a
+              >
+              <a class="nav-link" href="posts.html?category=gear">gear</a>
+            </li>
+            <li class="nav-link"><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+        <div class="u-coloumn nav__bottom">
+          <a href="index.html"
+            ><img
+              src="/assets/logos/round-logo-white.svg"
+              alt="beyond pace logo"
+          /></a>
+          <a href="https://github.com/Hallvard-Benan" target="_blank"
+            >&copy; Made by Hallvard Benan</a
+          >
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
