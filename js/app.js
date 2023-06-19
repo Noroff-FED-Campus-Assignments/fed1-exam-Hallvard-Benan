@@ -242,7 +242,7 @@ const bannerImageContainer = document.querySelector(".post__img--banner");
 const bottomImageContainer = document.querySelector(".post__img--bottom");
 const authorContainer = document.querySelector(".post-details__author");
 const dateContainer = document.querySelector(".post-details__date");
-const postTitile = document.getElementById("js-post-title");
+const postTitle = document.getElementById("js-post-title");
 const documentTitle = document.querySelector("title");
 const documentAuthor = document.getElementById("meta-author");
 const documentDescription = document.getElementById("meta-description");
@@ -261,7 +261,7 @@ async function getPost() {
     let oldBlogText = post.fields["blog text"];
     let newBlogText = oldBlogText.replace(/["'`]/g, "");
     documentTitle.innerHTML += post.fields.Title;
-    postTitile.innerHTML = post.fields.Title;
+    postTitle.innerHTML = post.fields.Title;
     breadCrumbTitle.innerHTML = post.fields.Title;
     const skeletonUi = document.querySelectorAll(".skeleton");
     skeletonUi.forEach((el) => {
@@ -276,7 +276,7 @@ async function getPost() {
     documentAuthor.content = post.fields.author;
     documentKeywords.content += post.fields.category[0];
   } catch (error) {
-    postTitile.innerHTML = "Post not found";
+    postTitle.innerHTML = "Post not found";
     postErrorContainer.innerHTML = ` <div class="container error-container">
    <h2 class="u-section__heading">Sorry, something went wrong</h2> 
    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="currentColor" d="M6.08 8.02a6.001 6.001 0 0 1 11.84 0a4.5 4.5 0 0 1 4.053 4.973A6.5 6.5 0 0 0 10.018 17H6.5a4.5 4.5 0 0 1-.42-8.982ZM22 16.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0ZM16.5 13a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.5-.5Zm0 7.125a.625.625 0 1 0 0-1.25a.625.625 0 0 0 0 1.25Z"/></svg> 
